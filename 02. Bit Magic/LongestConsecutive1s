@@ -1,0 +1,28 @@
+//Given a number N. Find the length of the longest consecutive 1s in its binary representation.
+// ip: 14
+// op: 3 ( 14 = 1110 )
+#include <bits/stdc++.h>
+using namespace std;
+
+int maxConsecutiveOnes(int x)
+{
+    int count=1;
+    x=((x)&(x<<1));
+    // Your code here
+    while(x!=0){
+           x=((x)&(x<<1));
+       count++;
+    }
+    return count;
+}
+int main() {
+	int t;
+	cin>>t;
+	while(t--)
+	{
+		int n;
+		cin>>n;
+		cout<<maxConsecutiveOnes(n)<<endl;
+	}
+	return 0;
+}
