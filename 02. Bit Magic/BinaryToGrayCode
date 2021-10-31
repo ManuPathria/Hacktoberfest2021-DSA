@@ -1,0 +1,28 @@
+// Given a decimal number N. You need to find the gray code of the number N and convert it into decimal.
+// Input: N = 7
+// Output: 4
+// Here, 7 is represented as 111 in binary form. The gray code of 111 is 100, in the binary form whose decimal equivalent is 4.
+HINT:
+Let b0, b1, b2 and b3 be the bits representing the binary numbers, where b0 is the LSB and b3 is the MSB.
+Let g0, g1, g2 and g3 be the bits representing the gray code of the binary numbers, where g0 is the LSB and g3 is the MSB.
+g0=b0^b1
+g1=b1^b2
+g2=b2^b3
+g3=b3
+So, Right shift the number n and store it in q. Then perform XOR operation on n and q.
+
+// SOLUTION:
+class Solution{
+    public:
+    //  Function to find the gray code of given number n
+    int greyConverter(int n)
+    {
+        //Performing Right Shift on n, 1 time.
+        int q = n >> 1;
+        
+        //returning the result of XOR opertaion of n and q 
+        //which gives gray code.
+        return n^q;
+    }
+
+};
